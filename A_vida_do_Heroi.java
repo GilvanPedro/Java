@@ -20,6 +20,10 @@ public class Main {
             int numeroRand = randomNumber +1;
         
             if(vidaRei > 0){
+                if(vidaHeroi <= 0){
+                System.out.println("Você morreu pelas mão do Rei de merda~!");
+                System.exit(0);
+                }
                 System.out.println("|------Opções------|------Descrição------|");
                 System.out.println("(1)- Soco----------|-Você disfere um soco que causa 21 de dano");
                 System.out.println("(2)- Chute---------|-Você disfere um chute que causa 19 de dano\n");
@@ -34,15 +38,41 @@ public class Main {
                     System.out.println("\n");
                 }
                 
-                System.out.println("Com o seu ataque, o rei te ataca de volta!\nVocê recebeu: "+numeroRand+" de dano");
+                System.out.println("Com o seu último ataque sendo feito, o rei usa as ultimas forças para te ataca de volta!\nVocê acaba recebendo: "+numeroRand+" de dano, e o Rei cai sobre os seus pés!");
                 vidaHeroi = vidaHeroi-numeroRand;
                 System.out.println("Vida atual: "+vidaHeroi);
             }else{
-                vidaHeroi = 120;
                 break;
             }
-            
-            System.out.println("Com todas as suas forças, você vê o maldito rei caindo no chão, mas, não estando satisfeito, você continua socando a sua cara até o desfigurar completamente!!");
         }
+            
+            System.out.println("Com todas as suas forças, você vê o maldito rei caindo no chão, mas está satisfeito, depois de tudo que ele te fez ele vai simplesmente morrer dessa forma??? Você continua socando a cara dele até o desfigurar completamente!!\nRecuperando o fólego e a sanidade, você brevemente surta com o que acabou de acontecer, mas, diferente do que você imaginou, tudo o que consegue sentir é um prazer imensurável!\nDecidido a viver da forma como você quer, você pensa em usar um outro nome. Pensando bastante, você finalmente chega na conclusão de que vai se chamar:");
+            nome = scanner.nextLine();
+            System.out.println(nome+", sim, é assim que você vai se chamar agora!!\nRasgando as roupas luxuosas do Rei, você faz uma espécie de capuz improvisado, utilizando ele para fujir por sima dos enormes muros do castelo.\nPensando em aonde você pode tentar um recomeço, você acha que por enquanto seria melhor se esconder no reino demoníaco, já que a notícia de que o Rei morreu se espalharia rápido, e o Heroi estaria desaparecido, então as pessoas ligariam os pontos.\nPartindo em direção novamente ao reino dos demônios, a única coisa que passa pela sua mente é o que você pode comer para o jantar, já que você não conseguiu comer nada no banquete, e estava faminto depois de lutar..\nCom isso, você tenta decidir o que fazer:");
+            System.out.println("|------Opções------|");
+            System.out.println("(1)- Tentar caçar algo");
+            System.out.println("(2)- Buscar abrigo e não comer");
+            System.out.println("(3)- Proucurar por frutas");
+            System.out.println("(5)- Seguir em frente");
+            opc = scanner.nextInt();
+            if(opc == 1){
+                int max = 20;
+                int randomNumber = rand.nextInt(max);
+                int d20 = randomNumber +1;
+                
+                System.out.println("Sem conseguir resistir a barriga roncando, você tenta encontrar algum animal para saciar a sua fome. Buscando entre as árvores, você não consegue ver nada por conta da escuridão, mas, se concentrando, tem certeza que ouviu um barulho entre as árvores.\nUtilizando um galho como arma improvisada, você decide tentar acertar o que quer que seja que se moveu.\n\nVocê rolou um dado e o resultado foi de: "+d20);
+                if(d20 >= 10){
+                    System.out.println("Se consentrando muito, você começa a ouvir bem baixo um barulho que parece com algo se rastejando, pretarando a madeira, você se joga em direção ao barulho e tenta acertar o animal.\nOuvindo um sibilar, você descobre que conseguir capturar uma cobra, e, rapidamente, corta a sua cabeça para não correr o risco de ser picado");
+                }else if(d20 < 10){
+                    System.out.println("Você pula para cima de onde você ouviu um barulho, conseguindo encontrar um animal, pelo formato, você supos que era uma cobra. Enquanto voc6e estava perdido em seus pensamentos, você acabou deixando a cabeça dela se soltar da sua mão, com ela te picando.\nVocê acabou recebendo 12 de dano, mas, felizmente, você já tem resistência a veneno o suficiente para lidar com isso.\nVida: "+(vidaHeroi-12));
+                    if(vidaHeroi <= 0){
+                        System.out.println("Com essa picada, você começa a se sentir muito mal, e, fraco por conta da batalha, acaba caindo no chão, perdendo aos poucos cada um dos seus sentidos, com você se questionando por que mereceu tudo isso que está acontecendo!\nVOCÊ MORREU!");
+                        System.exit(0);
+                    }
+                }
+            }else if(opc == 2){
+                
+            }
+        
     }
 }
